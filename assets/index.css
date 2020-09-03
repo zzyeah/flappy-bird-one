@@ -5,6 +5,7 @@
     background-color: red;
     background-image: url('../images/sky.png');
     background-position-x: 0;
+    overflow: hidden;
 }
 
 .bird {
@@ -21,8 +22,9 @@
     top: 235px;
     width: 30px;
     height: 30px;
-    background-color: green;
+    /* background-color: green; */
     background-image: url('../images/birds.png');
+    transition: top .3s linear;
 }
 
 .start {
@@ -36,15 +38,17 @@
     line-height: 60px;
     text-align: center;
     font-weight: bolder;
-    background-color: yellow;
+    /* background-color: yellow; */
+    cursor: pointer;
+    transition: all .3s linear;
 }
 
-.start start-white {
+.start.start-white {
     color: white;
     font-size: 24px;
 }
 
-.start start-blue {
+.start.start-blue {
     color: blue;
     font-size: 36px;
 }
@@ -53,10 +57,12 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
+    display: none;
     font-size: 20px;
     font-weight: bolder;
     color: white;
+    display: none;
+    z-index: 2;
 }
 
 /* 
@@ -74,7 +80,9 @@
     /* 透明程度 */
     opacity: .7;
     background-color: #000000;
+    display: none;
 
+    z-index: 2;
 }
 
 .end{
@@ -82,8 +90,12 @@
     top: 70px;
     left: 50%;
 
+    display: none;
+
     transform: translateX(-50%);
     text-align: center;
+
+    z-index: 3;
 }
 
 .end .over{
@@ -151,6 +163,23 @@
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.pipe{
+    width: 52px;
+    background-color: #000000;
+    position: absolute;
+}
+
+.pipe.pipe-up{
+    top: 0;
+    background-image: url('../images/pipe2.png');
+    background-position-y: bottom;
+}
+.pipe.pipe-down{
+    bottom: 0;
+    background-image: url('../images/pipe1.png');
+    background-position-y: top;
 }
 
 
